@@ -24,13 +24,22 @@
 ## 디렉터리 구조
 ```
 .
-├── README.md
-├── public <- 이미지 또는 폰트 자원을 보관합니다.
-└── src
-    ├── doc <- html 확장자 파일 문서를 보관합니다.
-    ├── index.html <- 페이지 진입 시 처음으로 보게될 루트 문서파일
-    ├── js <- 자바스크립트 파일을 보관합니다.
-    └── style <- css 파일을 보관합니다.
+├── README.md 
+├── index.html <-- 웹 페이지 진입 시 불러올 루트 문서
+├── package-lock.json <-- 의존성 관리 파일
+├── package.json <-- node.js 프로젝트 정보 파일
+├── public <-- 이미지, 폰트 등 정적 자원 디렉터리
+│   └── touch
+├── src <-- 개발 소스파일 디렉터리
+│   ├── doc <-- html 문서 파일 디렉터리
+│   │   └── touch
+│   ├── js <-- js 파일 디렉터리
+│   │   └── main.js <- js 루트 파일
+│   └── style <-- css 파일 디렉터리
+│       ├── reset.css
+│       └── style.css <- 루트 스타일 파일
+└── vite.config.js <- 서버 환경설정 파일
+
 ```
 
 ## 참고
