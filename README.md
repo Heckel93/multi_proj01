@@ -42,6 +42,12 @@
 
 ```
 
+## How to run
+```bash
+ npm install
+ npm run dev
+```
+
 ## 참고
 * 깃 커밋 규칙입니다.
 
