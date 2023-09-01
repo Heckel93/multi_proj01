@@ -1,6 +1,28 @@
 @import "reset.css";
-@import "bootstrap/dist/css/bootstrap.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url("/public/Pretendard-Medium.woff2") format("woff2"),
+    url("/public/Pretendard-Bold.woff2") format("woff2");
+}
+
+* {
+    font-family: Pretendard, serif;
+}
+
+/* 최상위 레이아웃 */
+.common_layout {
+    @apply w-full px-[0px] md:px-[100px] lg:px-[300px];
+}
+
+.header {
+    @apply absolute flex justify-between items-center font-bold text-white py-2;
+}
+
+.article {
+    @apply flex;
+}
