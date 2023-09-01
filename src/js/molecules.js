@@ -16,7 +16,7 @@ export const createHeader = () => {
       <a href="/discover" class="hover:underline underline-offset-4">디스커버리</a>
       <a href="/chat" class="hover:underline underline-offset-4">채팅</a>
     </nav>
-    <button type="button" class="btn-primary">
+    <button type="button" class="button_white !py-1.5 !px-0">
       로그인
     </button>
   `;
@@ -59,9 +59,9 @@ export const createFooter = () => {
 
     <div class="h-0 border border-solid border-cyan-500 w-full my-4"></div>
 
-    <section class="w-full flex justify-between text-white">
+    <section class="w-full flex justify-between items-center text-white">
       <h1 class="font-bold">Multicord</h1>
-      <button>로그인</button>
+      <button class="button_primary !py-2 !px-0">로그인</button>
     </section>
   `;
 

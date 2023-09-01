@@ -14,6 +14,11 @@
     font-family: Pretendard, serif;
 }
 
+/**
+    @warning 여기있는 css 는 수정하지 않는 것을 권고합니다.
+    필요하시면 기존 내용 참고하여 새로 작성하세요
+ */
+
 /* 최상위 레이아웃 */
 .common_layout {
     @apply w-full px-[20px] md:px-[100px] lg:px-[200px];
@@ -25,4 +30,21 @@
 
 .article {
     @apply flex py-14 flex-col md:flex-row;
+}
+
+
+.button {
+    @apply min-w-[100px] min-h-[24px] px-10 py-3;
+}
+
+.button_primary {
+    @apply button bg-cyan-400 text-white rounded-3xl hover:bg-cyan-500 hover:text-gray-100 transition ease-out active:bg-cyan-600;
+}
+
+.button_white {
+    @apply button bg-white text-gray-800 rounded-3xl hover:bg-gray-200 hover:text-gray-700 transition ease-out active:bg-gray-300;
+}
+
+.button_gray {
+    @apply button bg-slate-800 text-white rounded-3xl hover:bg-slate-700 hover:text-gray-50 transition ease-out active:bg-slate-600;
 }
