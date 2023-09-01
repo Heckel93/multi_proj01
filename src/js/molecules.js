@@ -16,7 +16,7 @@ export const createHeader = () => {
       <a href="/discover" class="hover:underline underline-offset-4">디스커버리</a>
       <a href="/chat" class="hover:underline underline-offset-4">채팅</a>
     </nav>
-    <button type="button" class="button_white !py-1.5 !px-0">
+    <button type="button" class="button_white !py-1.5 !px-0 login">
       로그인
     </button>
   `;
@@ -40,14 +40,14 @@ export const createFooter = () => {
       <section class="flex flex-col md:flex-row gap-x-28 gap-y-10">
       <nav class="flex flex-col gap-y-3 text-white pb-0 md:pb-16">
         <span class="text-cyan-500 font-bold">네비게이션</span>
-        <a href="/download">다운로드</a>
+        <a href="/src/doc/login.html">다운로드</a>
         <a href="/discover">디스커버리</a>
         <a href="/chat">채팅 서비스 가기</a>
       </nav>
 
       <nav class="flex flex-col gap-y-3 text-white pb-0 md:pb-16">
         <div class="flex items-center gap-x-2">
-          <img src="public/github.svg" alt="github icon">
+          <img src="/github.svg" alt="github icon">
           <span class="text-cyan-500 font-bold">Github</span>
         </div>
         <a href="/download">최은기 (galaxy4276)</a>
@@ -61,7 +61,7 @@ export const createFooter = () => {
 
     <section class="w-full flex justify-between items-center text-white">
       <h1 class="font-bold">Multicode</h1>
-      <button class="button_primary !py-2 !px-0">로그인</button>
+      <button class="button_primary !py-2 !px-0 login">로그인</button>
     </section>
   `;
 
