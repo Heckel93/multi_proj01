@@ -2,11 +2,11 @@
   "name": "multi_proj01",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "ts-node api/app.ts"
   },
   "engines": {
     "node": ">=18.16.1",
@@ -17,6 +17,7 @@
     "eslint": "^8.48.0",
     "postcss": "^8.4.29",
     "tailwindcss": "^3.3.3",
+    "ts-node": "^10.9.1",
     "vite": "^4.4.5"
   },
   "dependencies": {
