@@ -17,7 +17,7 @@ module.exports = {
             }
         }
     ],
-    ignorePatterns: ["api/**/*"],
+    ignorePatterns: ["api/**/*", "vite.config.js"],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"

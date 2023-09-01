@@ -1,7 +1,8 @@
 import * as path from 'node:path';
 
 export default {
-  publicDir: path.resolve(__dirname, 'src'),
+  mode: 'development',
+  assetsInclude: [],
   server: {
     open: 'index.html',
     host: '0.0.0.0',

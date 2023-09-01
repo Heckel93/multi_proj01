@@ -40,7 +40,7 @@ export const createFooter = () => {
       <section class="flex flex-col md:flex-row gap-x-28 gap-y-10">
       <nav class="flex flex-col gap-y-3 text-white pb-0 md:pb-16">
         <span class="text-cyan-500 font-bold">네비게이션</span>
-        <a href="/src/doc/login.html">다운로드</a>
+        <a href="/login.html">다운로드</a>
         <a href="/discover">디스커버리</a>
         <a href="/chat">채팅 서비스 가기</a>
       </nav>
