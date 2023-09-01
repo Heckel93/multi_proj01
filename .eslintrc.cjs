@@ -17,10 +17,12 @@ module.exports = {
             }
         }
     ],
+    ignorePatterns: ["api/**/*"],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
     "rules": {
+
     }
 }
