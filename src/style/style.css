@@ -6,8 +6,9 @@
 
 @font-face {
     font-family: 'Pretendard';
-    src: url("/public/Pretendard-Medium.woff2") format("woff2"),
-    url("/public/Pretendard-Bold.woff2") format("woff2");
+    src: url("/Pretendard-Medium.woff2") format("woff2"),
+    url("/Pretendard-Bold.woff2") format("woff2"),
+    url("/Pretendard-Light.woff2") format("woff2");
 }
 
 * {
