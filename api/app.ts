@@ -3,9 +3,10 @@ import * as express from 'express';
 import * as http from 'http';
 import * as cors from 'cors';
 
-import { Chat } from './types';
+import { Chat, UserAuth } from './types';
 
-const chatDatabase: Map<string, string> = new Map();
+let chatDatabase: Chat[] = [];
+let userDatabase: UserAuth[] = [];
 
 const app = express();
 const httpServer = http.createServer(app);
@@ -17,35 +18,57 @@ app.use(cors({
 app.use(express.urlencoded());
 app.use(express.json());
 
-const ioServer = new Server(httpServer);
+const ioServer = new Server(httpServer, {
+  cors: {
+    origin: '*',
+    methods: '*',
+  },
+});
 
 ioServer.on('connection', socket => {
+  const newUser = socket.handshake.auth as UserAuth;
+  userDatabase.push(newUser);
+  console.log({ userDatabase });
+
+  socket.send('userList', newUser);
   socket.send('history', () => {
     const entries = Array.from(chatDatabase.entries());
+
     if (entries.length > 1000) {
-      chatDatabase.clear();
+      chatDatabase = [];
     }
-    return entries.map(([userName, message]) => ({
-      userName, message
-    }));
+
+    return chatDatabase;
   });
 
   socket.emit('enter-new-member', () => {
     const headers = socket.request.headers;
-    console.log({ headers });
+    const auth = socket.handshake.auth as UserAuth;
+
     const { clientsCount } = ioServer.engine;
     return {
       clientsCount,
+      userName: auth.name,
     };
   });
 
   socket.on('chat', (data: Chat) => {
-    chatDatabase.set(data.user, data.message);
+    chatDatabase.push({ user: data.user, message: data.message});
+    console.log({ chatDatabase });
     socket.broadcast.emit('chat-broadcast', data);
   });
 
-  socket.on('disconnect', socket => {
+  socket.on('disconnect', reason => {
+    const auth = socket.handshake.auth as UserAuth;
+    console.log(`disconnected username: ${auth.name}`);
+    userDatabase = userDatabase.filter(u => u.id !== auth.id);
+
+    socket.broadcast.emit('disconnected', {
+      target: auth,
+      userList: userDatabase,
+    });
   });
+
 });
 
 httpServer.listen(8000);
