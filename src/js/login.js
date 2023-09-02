@@ -41,6 +41,7 @@ export const login = () => {
   const user = {
     id: fakerKO.datatype.uuid(),
     name: fakerKO.person.firstName() + fakerKO.person.lastName(),
+    avatarUrl: fakerKO.image.avatar(),
   };
 
   localStorage.setItem('user', JSON.stringify(user));
@@ -50,7 +51,7 @@ export const login = () => {
 
 /**
  * @description 브라우저 스토리지에서 로그인 된 사용자 정보를 반환합니다.
- * @returns {{ name: string; id: string }|null} 유저 정보 객체 또는 null
+ * @returns {{ name: string; id: string; avatarUrl: string }|null} 유저 정보 객체 또는 null
  */
 export const getUser = () => {
   const storage = localStorage.getItem('user');
