@@ -48,14 +48,32 @@ export const login = () => {
   location.href = '/';
 };
 
+const loginCallback = () => {
+  location.href = '/src/doc/login.html';
+};
+
 window.addEventListener('load', () => {
+  const isLogin = localStorage.getItem('user') !== null;
+
   const loginButtons = document.querySelectorAll('.login');
 
-  loginButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      location.href = '/src/doc/login.html';
+  if (isLogin) {
+    loginButtons.forEach(button => {
+      button.textContent = '로그아웃';
+      button.addEventListener('click', () => {
+        localStorage.removeItem('user');
+        button.textContent = '로그인';
+        button.onclick = loginCallback;
+      })
     });
-  });
+  }
+
+  if (!isLogin) {
+    loginButtons.forEach(button => {
+      button.addEventListener('click', loginCallback);
+    });
+  }
+
 
   document.querySelector('.login_submit')?.addEventListener('click', () => {
     login();
