@@ -30,8 +30,8 @@ ioServer.on('connection', socket => {
   userDatabase.push(newUser);
   console.log({ userDatabase });
 
-  socket.send('userList', newUser);
-  socket.send('history', () => {
+  socket.emit('userList', { userList: userDatabase });
+  socket.emit('history', () => {
     const entries = Array.from(chatDatabase.entries());
 
     if (entries.length > 1000) {
@@ -49,6 +49,7 @@ ioServer.on('connection', socket => {
     return {
       clientsCount,
       userName: auth.name,
+      userList: userDatabase,
     };
   });
 
