@@ -37,7 +37,7 @@ html, body {
 }
 
 .article {
-    @apply flex py-14 flex-col md:flex-row;
+    @apply flex py-24 flex-col md:flex-row;
 }
 
 
