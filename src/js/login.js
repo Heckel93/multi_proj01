@@ -48,6 +48,17 @@ export const login = () => {
   location.href = '/';
 };
 
+/**
+ * @description 브라우저 스토리지에서 로그인 된 사용자 정보를 반환합니다.
+ * @returns {{ name: string; id: string }|null} 유저 정보 객체 또는 null
+ */
+export const getUser = () => {
+  const storage = localStorage.getItem('user');
+  if (!storage) return null;
+  return JSON.parse(storage);
+};
+
+
 const loginCallback = () => {
   location.href = '/src/doc/login.html';
 };

@@ -50,7 +50,7 @@ export const createFooter = () => {
           <img src="/github.svg" alt="github icon">
           <span class="text-cyan-500 font-bold">Github</span>
         </div>
-        <a href="/download">최은기 (galaxy4276)</a>
+        <a href="https://github.com/galaxy4276" target="_blank">최은기 (galaxy4276)</a>
         <a href="/discover">최찬범 (bbomfomi)</a>
         <a href="/chat">김건우 (kkwkkw)</a>
         <a href="/chat">김서원 (sekim2)</a>
