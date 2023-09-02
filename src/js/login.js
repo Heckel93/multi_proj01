@@ -61,10 +61,12 @@ window.addEventListener('load', () => {
     loginButtons.forEach(button => {
       button.textContent = '로그아웃';
       button.addEventListener('click', () => {
-        localStorage.removeItem('user');
-        button.textContent = '로그인';
-        button.onclick = loginCallback;
-      })
+        loginButtons.forEach(button => {
+          localStorage.removeItem('user');
+          button.textContent = '로그인';
+          button.onclick = loginCallback;
+        });
+      });
     });
   }
 
