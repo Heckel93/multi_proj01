@@ -39,7 +39,7 @@ export const login = () => {
   if (errorSign) return;
 
   const user = {
-    id: fakerKO.datatype.uuid(),
+    id: fakerKO.database.mongodbObjectId(),
     name: fakerKO.person.firstName() + fakerKO.person.lastName(),
     avatarUrl: fakerKO.image.avatar(),
   };

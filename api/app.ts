@@ -32,12 +32,9 @@ ioServer.on('connection', socket => {
 
   socket.emit('userList', { userList: userDatabase });
   socket.emit('history', (() => {
-    const entries = Array.from(chatDatabase.entries());
-
-    if (entries.length > 1000) {
+    if (chatDatabase.length > 1000) {
       chatDatabase = [];
     }
-
     return chatDatabase;
   })());
 
