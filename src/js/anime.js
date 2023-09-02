@@ -1,23 +1,19 @@
-import anime from 'animejs';
-
 const doAnimationMainPage = () => {
   const articles = Array.from(document.getElementsByClassName('article'));
   if (articles.length === 0) return;
 
   const options = {
-    root: document.querySelector('main'),
+    // root: document.querySelector('#app'),
     rootMargin: '0px',
-    threshold: 0,
+    threshold: 0.1,
   };
   const observer = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach(entry => {
         console.log({ intersecting: entry.isIntersecting, target: entry.target });
         if (!entry.isIntersecting) return;
-        anime({
-          targets: entry,
-          translateX: 270,
-        });
+        const { className } = entry.target;
+        entry.target.className += ' animate__animated animate__fadeInUp';
       })
     },
     options
@@ -26,7 +22,14 @@ const doAnimationMainPage = () => {
   articles.forEach(article => {
     observer.observe(article);
   });
+
+  const startment = document.querySelector('.start');
+  if (startment) {
+    observer.observe(startment);
+  }
+
 };
+
 
 (() => {
   doAnimationMainPage();

@@ -57,3 +57,9 @@
 .form_content {
     @apply flex flex-col gap-y-1.5;
 }
+
+.dimmed {
+    width: 100vw;
+    height: 100%;
+    transform: translateX(-200px);
+}

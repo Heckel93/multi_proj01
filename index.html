@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MULTICODE | Home</title>
     <link rel="stylesheet" href="src/style/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
   <body>
     <div id="app">
@@ -54,17 +58,20 @@
           </div>
         </article>
 
-        <article class="article">
-          <div class="flex-[0.5] flex flex-col items-center justify-center gap-y-5">
+        <article class="article relative animate__animated animate__fadeInUp">
+
+          <div class="flex-[0.5] flex flex-col z-10 items-center justify-center gap-y-5">
             <h1 class="font-bold text-[2rem] leading-tight text-gray-800">누구나 쉽게 아이디어를 공유할 수 있는 곳</h1>
             <span class="font-light text-gray-700 text-[1.2rem]">
               창의성을 높이기 위해 개발 과정에서 적절한 휴식과 구성원들 간 잡담으로 아이디어를 모아보세요. 쉬운 접근성을 통해 무엇이든 가능한 공간을 제공합니다.
             </span>
           </div>
 
-          <div class="flex-[0.5] justify-center w-full">
+
+          <div class="flex-[0.5] justify-center w-full z-10">
             <img src="/comm_bulb.svg" alt="comm_bulb.svg" class="!m-0">
           </div>
+
         </article>
 
         <article class="article">
@@ -80,7 +87,7 @@
           </div>
         </article>
 
-        <section class="flex flex-col items-center gap-y-5 pt-[120px]">
+        <section class="flex flex-col items-center gap-y-5 pt-[120px] start">
           <h1 class="font-bold text-[2rem] leading-tight text-gray-800">이제 시작해볼까요?</h1>
           <button class="button_primary">서비스 시작!</button>
         </section>
