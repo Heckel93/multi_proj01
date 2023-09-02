@@ -1,4 +1,4 @@
-import { fakerKO, faker } from '@faker-js/faker';
+import { fakerKO } from '@faker-js/faker';
 
 const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
@@ -61,4 +61,3 @@ window.addEventListener('load', () => {
     login();
   });
 });
-
