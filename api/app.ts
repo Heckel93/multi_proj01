@@ -1,6 +1,7 @@
 import { Server } from 'socket.io';
 import * as express from 'express';
 import * as http from 'http';
+import * as cors from 'cors';
 
 import { Chat } from './types';
 
@@ -9,6 +10,10 @@ const chatDatabase: Map<string, string> = new Map();
 const app = express();
 const httpServer = http.createServer(app);
 
+app.use(cors({
+  origin: '*',
+  methods: '*',
+}));
 app.use(express.urlencoded());
 app.use(express.json());
 
