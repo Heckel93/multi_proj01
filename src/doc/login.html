@@ -10,7 +10,7 @@
   <img
     src="/login_chat.png"
     alt="login_chat"
-    class="absolute left-0 top-0 w-[350px] h-[400px]"
+    class="absolute left-0 top-0"
   >
   <img
     src="/login_chat02.svg"
@@ -18,7 +18,7 @@
     class="absolute right-0 bottom-0"
   >
   <main class="flex justify-center items-center">
-    <section class="w-full h-full md:w-[600px] text-gray-400 md:h-[420px] bg-gray-800 z-10 py-5 px-14 rounded-sm">
+    <section class="flex flex-col w-full h-full md:w-[600px] text-gray-400 md:h-[420px] bg-gray-800 z-10 py-5 px-14 rounded-sm relative">
       <div class="w-full text-center">
         <h1 class="text-white text-2xl">돌아오신 것을 환영해요!</h1>
         <span class="text-gray-400 font-thin">다시 만나니까 반갑네요</span>
@@ -26,26 +26,26 @@
 
       <div class="pb-5"></div>
 
-      <section class="flex flex-col justify-between">
+      <section class="flex flex-col h-full relative">
         <div class="form_content">
           <div class="flex gap-x-1">
-            <span class="text-gray-300">이메일</span>
+            <label class="text-gray-300" for="login_input">이메일</label>
             <span class="text-rose-500">*</span>
           </div>
-          <input type="text" class="login_input" placeholder="이메일 형식을 입력해주세요">
+          <input type="text" class="login_input" id="login_input" placeholder="이메일 형식을 입력해주세요">
         </div>
 
-<!--        <div class="pb-7"></div>-->
+                <div class="pb-7"></div>
 
         <div class="form_content">
           <div class="flex gap-x-1">
-            <span class="text-gray-300">비밀번호</span>
+            <label class="text-gray-300" for="login_pw">비밀번호</label>
             <span class="text-rose-500">*</span>
           </div>
-          <input type="text" class="login_input" placeholder="패스워드를 입력해주세요">
+          <input type="password" class="login_input" id="login_pw" placeholder="패스워드를 입력해주세요">
         </div>
 
-        <button class="button_primary !rounded-md self-end w-full">로그인</button>
+        <button class="button_primary !rounded-md w-full submit">로그인</button>
       </section>
 
     </section>

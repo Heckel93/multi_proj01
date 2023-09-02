@@ -6,3 +6,9 @@ html, body {
 main {
     height: 100%;
 }
+
+.submit {
+    position: absolute;
+
+    bottom: 20px;
+}
