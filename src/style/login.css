@@ -7,7 +7,7 @@ main {
     height: 100%;
 }
 
-.submit {
+.login_submit {
     position: absolute;
 
     bottom: 20px;

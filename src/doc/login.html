@@ -32,25 +32,32 @@
             <label class="text-gray-300" for="login_id">이메일</label>
             <span class="text-rose-500">*</span>
           </div>
-          <input type="text" class="login_input !text-gray-200" id="login_id" placeholder="이메일 형식을 입력해주세요">
+          <div class="flex flex-col">
+            <input type="text" class="login_input !text-gray-200" id="login_id" placeholder="이메일 형식을 입력해주세요">
+            <span class="text-sm text-rose-500" id="id_error_tooltip"></span>
+          </div>
+
         </div>
 
-                <div class="pb-7"></div>
+        <div class="pb-3"></div>
 
         <div class="form_content">
           <div class="flex gap-x-1">
             <label class="text-gray-300" for="login_pw">비밀번호</label>
             <span class="text-rose-500">*</span>
           </div>
-          <input type="password" class="login_input !text-gray-200" id="login_pw" placeholder="패스워드를 입력해주세요">
+          <div class="flex flex-col">
+            <input type="password" class="login_input !text-gray-200" id="login_pw" placeholder="패스워드를 입력해주세요">
+            <span class="text-sm text-rose-500" id="pw_error_tooltip"></span>
+          </div>
         </div>
 
-        <button class="button_primary !rounded-md w-full submit">로그인</button>
+        <button class="button_primary !rounded-md w-full login_submit">로그인</button>
       </section>
 
     </section>
 
-
+    <script type="module" src="../js/login.js"></script>
   </main>
 </body>
 </html>
