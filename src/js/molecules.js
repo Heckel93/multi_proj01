@@ -61,7 +61,10 @@ export const createFooter = () => {
 
     <section class="w-full flex justify-between items-center text-white">
       <h1 class="font-bold">Multicode</h1>
-      <button class="button_primary !py-2 !px-0 login">로그인</button>
+      <div>
+        <span class="hello text-white"></span>
+        <button class="button_primary !py-2 !px-0 login">로그인</button>
+      </div>
     </section>
   `;
 
