@@ -3,14 +3,12 @@ const doAnimationMainPage = () => {
   if (articles.length === 0) return;
 
   const options = {
-    // root: document.querySelector('#app'),
     rootMargin: '0px',
     threshold: 0.1,
   };
   const observer = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach(entry => {
-        console.log({ intersecting: entry.isIntersecting, target: entry.target });
         if (!entry.isIntersecting) return;
         const { className } = entry.target;
         entry.target.className += ' animate__animated animate__fadeInUp';
