@@ -40,7 +40,7 @@ export const login = () => {
 
   const user = {
     id: fakerKO.datatype.uuid(),
-    name: fakerKO.person.fullName(),
+    name: fakerKO.person.firstName() + fakerKO.person.lastName(),
   };
 
   localStorage.setItem('user', JSON.stringify(user));
@@ -55,12 +55,19 @@ const loginCallback = () => {
 window.addEventListener('load', () => {
   const isLogin = localStorage.getItem('user') !== null;
 
+  const helloSection = document.getElementsByClassName('hello').item(0);
+  if (isLogin && helloSection) {
+    const user = JSON.parse(localStorage.getItem('user'));
+    helloSection.textContent = `${user.name}님! 반갑습니다!`;
+  }
+
   const loginButtons = document.querySelectorAll('.login');
 
   if (isLogin) {
     loginButtons.forEach(button => {
       button.textContent = '로그아웃';
       button.addEventListener('click', () => {
+        helloSection.textContent = '';
         loginButtons.forEach(button => {
           localStorage.removeItem('user');
           button.textContent = '로그인';
@@ -75,7 +82,6 @@ window.addEventListener('load', () => {
       button.addEventListener('click', loginCallback);
     });
   }
-
 
   document.querySelector('.login_submit')?.addEventListener('click', () => {
     login();
