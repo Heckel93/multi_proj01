@@ -66,3 +66,7 @@ html, body {
     height: 100%;
     transform: translateX(-200px);
 }
+
+.pretendard {
+    font-family: Pretendard, -apple-system, monospace;
+}

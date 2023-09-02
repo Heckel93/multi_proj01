@@ -8,10 +8,10 @@ export const createHeader = () => {
   if (!header) throw Error('헤더가 존재하지 않습니다.');
 
   const bootstrap = `
-    <span class="text-[1.3rem]">
+    <a href="/" class="text-[1.3rem] pretendard">
       Multicode
-    </span>
-    <nav class="font-medium flex gap-x-4">
+    </a>
+    <nav class="font-medium flex gap-x-4 pretendard">
       <a href="/src/doc/download.html" class="hover:underline underline-offset-4">다운로드</a>
       <a href="/src/doc/discovery.html" class="hover:underline underline-offset-4">디스커버리</a>
       <a href="/src/doc/chat.html" class="hover:underline underline-offset-4">채팅</a>
