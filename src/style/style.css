@@ -4,6 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+}
+
 @font-face {
     font-family: 'Pretendard';
     src: url("/Pretendard-Medium.woff2") format("woff2"),

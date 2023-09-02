@@ -12,9 +12,9 @@ export const createHeader = () => {
       Multicode
     </span>
     <nav class="font-medium flex gap-x-4">
-      <a href="/download" class="hover:underline underline-offset-4">다운로드</a>
-      <a href="/discover" class="hover:underline underline-offset-4">디스커버리</a>
-      <a href="/chat" class="hover:underline underline-offset-4">채팅</a>
+      <a href="/src/doc/download.html" class="hover:underline underline-offset-4">다운로드</a>
+      <a href="/src/doc/discovery.html" class="hover:underline underline-offset-4">디스커버리</a>
+      <a href="/src/doc/chat.html" class="hover:underline underline-offset-4">채팅</a>
     </nav>
     <button type="button" class="button_white !py-1.5 !px-0 login">
       로그인
@@ -40,9 +40,9 @@ export const createFooter = () => {
       <section class="flex flex-col md:flex-row gap-x-28 gap-y-10">
       <nav class="flex flex-col gap-y-3 text-white pb-0 md:pb-16">
         <span class="text-cyan-500 font-bold">네비게이션</span>
-        <a href="/login.html">다운로드</a>
-        <a href="/discover">디스커버리</a>
-        <a href="/chat">채팅 서비스 가기</a>
+        <a href="/src/doc/download.html">다운로드</a>
+        <a href="/src/doc/download.html">디스커버리</a>
+        <a href="/src/doc/chat.html">채팅 서비스 가기</a>
       </nav>
 
       <nav class="flex flex-col gap-y-3 text-white pb-0 md:pb-16">
