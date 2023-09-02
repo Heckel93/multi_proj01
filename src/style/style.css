@@ -18,6 +18,10 @@ html, body {
     font-family: Pretendard, serif;
 }
 
+html, body {
+    height: 100%;
+}
+
 /**
     @warning 여기있는 css 는 수정하지 않는 것을 권고합니다.
     필요하시면 기존 내용 참고하여 새로 작성하세요
@@ -69,4 +73,8 @@ html, body {
 
 .pretendard {
     font-family: Pretendard, -apple-system, monospace;
+}
+
+footer {
+    position: relative;
 }
