@@ -20,10 +20,10 @@ const createLiveUser = (user) => {
 
 const createChat = ({ user, avatarUrl, message }) => {
   const chatBox = document.createElement('div');
-  chatBox.className = 'chat text-gray-200 min-w-[120px] whitespace-nowrap';
+  chatBox.className = 'chat text-gray-200 min-w-[300px] whitespace-nowrap';
   const bootstrap = `
     <img src="${avatarUrl}" alt="image" class="w-[42px] h-[42px] rounded-3xl">
-    <div class="flex flex-col w-fit">
+    <div class="flex flex-col w-full">
       <div class="flex items-center gap-x-1.5 w-2/4">
         <span class="text-lg h-[30px]">${user}</span>
         <span class="text-xs text-gray-500">오늘 오후 5:54</span>
