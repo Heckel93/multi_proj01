@@ -85,6 +85,12 @@ socket.on('disconnected', ({ target, userList }) => {
   reDrawLivePanel(userList);
 });
 
+socket.on('history', (chatList) => {
+  chatList.forEach(chat => {
+    chatListPanel.append(createChat(chat));
+  });
+});
+
 socket.on('chat-broadcast', (chat) => {
   chatListPanel.append(createChat(chat));
 });
