@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    width: 1440px;
+    height:1200px;
+    color: white;
+}
+.wrapper{
+    height: 1200px;
+    width: 1440px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+
+}
+.user-container{
+    width: 13%;
+    height: 100%;
+    background-color: rgb(24,27,39);
+}
+.user-container label{
+    font-size: 14px;
+    background-color: rgb(173,181,189);
+    margin-right: 1rem;
+    
+}
+
+.display-container{
+    width: 87%;
+    height: 90%;
+    background-color: rgb(73,80,87) ;
+    overflow-y: scroll;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: absolute;
+    left: 12.3%;
+}
+.input-container{
+    flex: 1;
+    display:flex;
+    justify-self: left;
+    align-items: end;
+    background-color: rgb(108,117,125);
+    position: relative;
+
+}
+.input-container span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem;
+    width: 65%;
+}
+.chatting-input{
+    font-size: 12;
+    height: 100%;
+    flex:8;
+    border:none;
+}
+.send-button{
+    flex:1;
+    background-color: rgb(13,202,240);
+    height: 100%;
+    border-radius: 3px;
+}
+.chattig-list li{
+    width: 90%;
+    padding: 0.3rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-top: 0.5rem;
+}
+.profile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex:1;
+}
+.profile.user{
+    font-size: 5px;
+    margin-bottom: 0.2rem;
+}
+.profile.images{
+    border-radius: 50%;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+}
+.message{
+    border-radius: 5px;
+    padding: 0.5rem;
+
+}
