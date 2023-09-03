@@ -32,15 +32,11 @@
 ├── package.json <-- node.js 프로젝트 정보 파일
 ├── api <-- 웹 소켓 API 서버 디렉터리
 ├── public <-- 이미지, 폰트 등 정적 자원 디렉터리
-│   └── touch
 ├── src <-- 개발 소스파일 디렉터리
 │   ├── doc <-- html 문서 파일 디렉터리
-│   │   └── touch
 │   ├── js <-- js 파일 디렉터리
-│   │   └── main.js <- js 루트 파일
 │   └── style <-- css 파일 디렉터리
-│       ├── reset.css
-│       └── style.css <- 루트 스타일 파일
+├── tailwind.config.js <-- tailwind 환경설정 파일
 └── vite.config.js <- 서버 환경설정 파일
 
 ```
