@@ -14,6 +14,7 @@ const httpServer = http.createServer(app);
 app.use(cors({
   origin: '*',
   methods: '*',
+  credentials: true,
 }));
 app.use(express.urlencoded());
 app.use(express.json());
@@ -69,4 +70,4 @@ ioServer.on('connection', socket => {
 
 });
 
-httpServer.listen(8000);
+httpServer.listen(8000, '0.0.0.0');
