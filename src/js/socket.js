@@ -9,7 +9,7 @@ let socket = null;
 export const initializeSocket = () => {
   const user = getUser();
   if (!user) throw Error('로그인이 필요합니다.');
-  const instance = io(localhost, {
+  const instance = io(outServerEndpoint, {
     auth: user,
   });
   socket = instance;

@@ -87,7 +87,7 @@ const reDrawLivePanel = (users) => {
         user: user.name,
         avatarUrl: user.avatarUrl,
         message: chatInputbox.value,
-        time: dayjs().format('MM월 DD일 HH:MM:ss'),
+        time: dayjs(new Date()).format('MM월 DD일 HH:MM:ss'),
       });
 
       chatInputbox.value = '';
