@@ -54,7 +54,10 @@ const reDrawLivePanel = (users) => {
     location.href = '/';
   }
 
-  chatInputbox.addEventListener('keydown', e => {
+  chatInputbox.addEventListener('keyup', e => {
+    const message = chatInputbox.value;
+    if (message.trim() === '') return;
+
     if (e.key === 'Enter') {
       socket.emit('chat', {
         user: user.name,

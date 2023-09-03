@@ -52,6 +52,7 @@ ioServer.on('connection', socket => {
   socket.on('chat', (data: Chat) => {
     chatDatabase.push({ user: data.user, message: data.message, avatarUrl: data.avatarUrl });
     console.log({ chatDatabase });
+    socket.emit('chat-broadcast', data);
     socket.broadcast.emit('chat-broadcast', data);
   });
 
