@@ -1,13 +1,15 @@
 import { io } from 'socket.io-client';
 import { getUser } from './login.js';
 
+const outServerEndpoint = 'ws://galaxy4276.asuscomm.com:8000';
+const localhost = 'ws://localhost:8000';
 
 let socket = null;
 
 export const initializeSocket = () => {
   const user = getUser();
   if (!user) throw Error('로그인이 필요합니다.');
-  const instance = io('ws://localhost:8000', {
+  const instance = io(localhost, {
     auth: user,
   });
   socket = instance;

@@ -4,6 +4,7 @@ import { initializeSocket } from './socket';
 const liverPanel = document.getElementById('liver_panel');
 const chatListPanel = document.getElementById('chat_list');
 const chatInputbox = document.querySelector('.chat_box');
+const profileCard = document.querySelector('.profile_card');
 
 const socket = initializeSocket();
 
@@ -54,6 +55,8 @@ const reDrawLivePanel = (users) => {
     location.href = '/';
   }
 
+  profileCard.append(createLiveUser(user));
+  
   chatInputbox.addEventListener('keyup', e => {
     const message = chatInputbox.value;
     if (message.trim() === '') return;
