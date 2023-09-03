@@ -1,5 +1,6 @@
 import { getUser } from './login';
 import { initializeSocket } from './socket';
+import dayjs from 'dayjs';
 
 const liverPanel = document.getElementById('liver_panel');
 const chatListPanel = document.getElementById('chat_list');
@@ -19,7 +20,7 @@ const createLiveUser = (user) => {
   return liver;
 };
 
-const createChat = ({ user, avatarUrl, message }) => {
+const createChat = ({ user, avatarUrl, message, time }) => {
   const chatBox = document.createElement('div');
   chatBox.className = 'chat text-gray-200 min-w-[300px] whitespace-nowrap';
   const bootstrap = `
@@ -27,7 +28,7 @@ const createChat = ({ user, avatarUrl, message }) => {
     <div class="flex flex-col w-full">
       <div class="flex items-center gap-x-1.5 w-2/4">
         <span class="text-lg h-[30px]">${user}</span>
-        <span class="text-xs text-gray-500">오늘 오후 5:54</span>
+        <span class="text-xs text-gray-500">${time}</span>
       </div>
       <span class="w-3/4 text-gray-300 whitespace-pre-line">${message}</span>
     </div>
@@ -86,7 +87,7 @@ const reDrawLivePanel = (users) => {
         user: user.name,
         avatarUrl: user.avatarUrl,
         message: chatInputbox.value,
-        time: new Date(),
+        time: dayjs().format('MM월 DD일 HH:MM:ss'),
       });
 
       chatInputbox.value = '';
