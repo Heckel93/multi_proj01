@@ -52,7 +52,6 @@ body {
     width: 65%;
 }
 .chatting-input{
-    font-size: 12;
     height: 100%;
     flex:8;
     border:none;
@@ -95,17 +94,16 @@ body {
 
 .chat_panel {
     display: flex;
-    height: 100%;
+    flex: 1;
+    overflow: auto;
     flex-direction: column;
 }
 
 .chat_list {
-    flex: 1;
-    max-height: 100%;
     overflow-x: hidden;;
     overflow-y: scroll;
 }
 
 .chat_box {
-    flex: 0.1;
+
 }
