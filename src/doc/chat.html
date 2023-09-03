@@ -29,7 +29,7 @@
     <section class="w-full flex flex-col h-full">
       <article class="chat_space">
         <div class="chat_header flex justify-end px-4 py-3">
-          <button class="button_primary !py-1.5 !px-6" id>채팅 떠나기</button>
+          <button class="button_primary !py-1.5 !px-6" id="go_home">채팅 떠나기</button>
         </div>
       </article>
 
@@ -46,27 +46,12 @@
 
   <script type="module" src="../js/login.js"></script>
   <script type="module" src="../js/chat.js"></script>
-<!--<div class="wrapper">-->
-<!--  <div class="user-container">-->
-<!--    <div class="display-container">-->
-<!--      <ul class="chatting-list">-->
-<!--        <li>-->
-<!--          <span class="profile">-->
-<!--              <span class="user">깔깔</span>-->
-<!--              <img src="https://placeimg.com/50/50/ant" alt="any">-->
-<!--          </span>-->
-<!--          &lt;!&ndash; <span class="message">그래반가워</span>-->
-<!--          <span class="time">오후 2:10</span> &ndash;&gt;-->
-<!--        </li>-->
-<!--      </ul>-->
-<!--    </div>-->
-<!--    <div class="input-container">-->
-<!--      <span>-->
-<!--      <input type="text" class="chatting-input">-->
-<!--      <button class="send-button">전송</button>-->
-<!--      </span>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <script src="js/socket.js"></script>&lt;!&ndash; chatjs를 불러오기 &ndash;&gt;-->
+  <script>
+    const exitButton = document.querySelector('#go_home');
+    exitButton.onclick = () => {
+      location.href = '/';
+    };
+  </script>
+
 </body>
 </html>
