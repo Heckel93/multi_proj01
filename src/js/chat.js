@@ -1,6 +1,7 @@
 import { getUser } from './login';
 import { initializeSocket } from './socket';
 import dayjs from 'dayjs';
+import { fakerKO } from '@faker-js/faker';
 
 const liverPanel = document.getElementById('liver_panel');
 const chatListPanel = document.getElementById('chat_list');
@@ -66,6 +67,12 @@ const reDrawLivePanel = (users) => {
   });
 };
 
+const scrollToLastChatNode = () => {
+  const last = chatListPanel.lastChild;
+  const rect = last.getBoundingClientRect();
+  chatListPanel.scrollTop = rect.y;
+};
+
 /**
  * @description 필수 요소에 대해 초기화 로직을 수행합니다.
  */
@@ -108,15 +115,17 @@ socket.on('enter-new-member', ({ clientsCount, userName, userList }) => {
 
 socket.on('disconnected', ({ target, userList }) => {
   reDrawLivePanel(userList);
-  chatListPanel.append(createLeaveMessage(target.name))
+  chatListPanel.append(createLeaveMessage(target.name));
 });
 
 socket.on('history', (chatList) => {
   chatList.forEach(chat => {
     chatListPanel.append(createChat(chat));
   });
+  scrollToLastChatNode();
 });
 
 socket.on('chat-broadcast', (chat) => {
   chatListPanel.append(createChat(chat));
+  scrollToLastChatNode();
 });
