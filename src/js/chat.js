@@ -36,6 +36,26 @@ const createChat = ({ user, avatarUrl, message }) => {
   return chatBox;
 };
 
+const createEnterMessage = (userName) => {
+  const div = document.createElement('div');
+  div.className = 'flex items-center w-full';
+  div.innerHTML = `
+    <span class="text-gray-600">${userName} 님이 입장하셨습니다.</span>
+  `;
+
+  return div;
+};
+
+const createLeaveMessage = (userName) => {
+  const div = document.createElement('div');
+  div.className = 'flex items-center w-full';
+  div.innerHTML = `
+    <span class="text-gray-600">${userName} 님이 퇴장하셨습니다.</span>
+  `;
+
+  return div;
+};
+
 const reDrawLivePanel = (users) => {
   while (liverPanel.firstChild) {
     liverPanel.removeChild(liverPanel.lastChild);
@@ -82,10 +102,12 @@ socket.on('userList', ({ userList: list }) => {
 
 socket.on('enter-new-member', ({ clientsCount, userName, userList }) => {
   reDrawLivePanel(userList);
+  chatListPanel.append(createEnterMessage(userName));
 });
 
 socket.on('disconnected', ({ target, userList }) => {
   reDrawLivePanel(userList);
+  chatListPanel.append(createLeaveMessage(target.name))
 });
 
 socket.on('history', (chatList) => {
