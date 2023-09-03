@@ -62,7 +62,7 @@ ioServer.on('connection', socket => {
     console.log(`disconnected username: ${auth.name}`);
     userDatabase = userDatabase.filter(u => u.id !== auth.id);
 
-    socket.emit('disconnected', {
+    socket.broadcast.emit('disconnected', {
       target: auth,
       userList: userDatabase,
     });
