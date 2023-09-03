@@ -78,3 +78,23 @@ html, body {
 footer {
     position: relative;
 }
+
+.live_panel {
+    @apply px-7 py-4 bg-gray-900 min-w-[200px] h-full;
+}
+
+.liver {
+    @apply flex items-center gap-x-3 text-gray-300;
+}
+
+.chat_box {
+    @apply w-full h-12 px-4 bg-gray-600 rounded-lg text-gray-200;
+}
+
+.chat_space {
+    @apply flex-[1];
+}
+
+.chat {
+    @apply flex gap-x-2.5;
+}
