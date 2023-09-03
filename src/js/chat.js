@@ -56,7 +56,7 @@ const reDrawLivePanel = (users) => {
   }
 
   profileCard.append(createLiveUser(user));
-  
+
   chatInputbox.addEventListener('keyup', e => {
     const message = chatInputbox.value;
     if (message.trim() === '') return;

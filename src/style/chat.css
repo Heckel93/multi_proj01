@@ -1,6 +1,10 @@
 .chat_layout {
 }
 
+body {
+    overflow: hidden;
+}
+
 .wrapper{
     height: 1200px;
     width: 1440px;
@@ -87,4 +91,21 @@
     border-radius: 5px;
     padding: 0.5rem;
 
+}
+
+.chat_panel {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+.chat_list {
+    flex: 0.95;
+    max-height: 100%;
+    overflow-x: hidden;;
+    overflow-y: scroll;
+}
+
+.chat_box {
+    flex: 0.05;
 }

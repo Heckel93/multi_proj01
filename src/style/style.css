@@ -92,7 +92,6 @@ footer {
 }
 
 .chat_space {
-    @apply flex-[1];
 }
 
 .chat {
