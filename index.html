@@ -143,5 +143,13 @@
     <script type="module" src="src/js/molecules.js"></script>
     <script type="module" src="src/js/anime.js"></script>
     <script type="module" src="src/js/login.js"></script>
+    <script>
+      const goChatButtons = Array.from(document.getElementsByClassName('go_chat_button'));
+      goChatButtons.forEach(button => {
+        button.onclick = () => {
+          location.href = '/src/doc/chat.html';
+        };
+      });
+    </script>
   </body>
 </html>
