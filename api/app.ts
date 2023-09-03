@@ -38,8 +38,7 @@ ioServer.on('connection', socket => {
     return chatDatabase;
   })());
 
-  socket.emit('enter-new-member', () => {
-    const headers = socket.request.headers;
+  socket.broadcast.emit('enter-new-member', (() => {
     const auth = socket.handshake.auth as UserAuth;
 
     const { clientsCount } = ioServer.engine;
@@ -48,7 +47,7 @@ ioServer.on('connection', socket => {
       userName: auth.name,
       userList: userDatabase,
     };
-  });
+  })());
 
   socket.on('chat', (data: Chat) => {
     chatDatabase.push({ user: data.user, message: data.message, avatarUrl: data.avatarUrl });
@@ -61,7 +60,7 @@ ioServer.on('connection', socket => {
     console.log(`disconnected username: ${auth.name}`);
     userDatabase = userDatabase.filter(u => u.id !== auth.id);
 
-    socket.broadcast.emit('disconnected', {
+    socket.emit('disconnected', {
       target: auth,
       userList: userDatabase,
     });
