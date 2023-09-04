@@ -129,6 +129,7 @@ window.addEventListener('load', () => {
   socket.on('enter-new-member', ({ clientsCount, userName, userList }) => {
     reDrawLivePanel(userList);
     chatListPanel.append(createEnterMessage(userName));
+    scrollToLastChatNode();
   });
 
   socket.on('disconnected', ({ target, userList }) => {
