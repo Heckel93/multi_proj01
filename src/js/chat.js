@@ -1,6 +1,6 @@
+import dayjs from 'dayjs';
 import { getUser } from './login';
 import { initializeSocket } from './socket';
-import dayjs from 'dayjs';
 
 const liverPanel = document.getElementById('liver_panel');
 const chatListPanel = document.getElementById('chat_list');
@@ -68,6 +68,23 @@ const reDrawLivePanel = (users) => {
 
 const scrollToLastChatNode = () => chatListPanel.scrollTop = chatListPanel.scrollHeight;
 
+const showConnectionErrorModal = () => {
+  const modal = document.createElement('div');
+  modal.onclick = window.connectionErrorModal.showModal();
+  modal.innerHTML = `
+          <dialog id="connectionErrorModal" class="modal">
+            <form method="dialog" class="modal-box">
+              <h3 class="font-bold text-lg">채팅 서버와 연결이 끊겼습니다.</h3>
+              <p class="py-4">관리자에게 문의해주세요. 불편을 드려 죄송합니다.</p>
+              <div class="modal-action">
+                <button class="btn" onclick="location.href='/'">Close</button>
+              </div>
+            </form>
+          </dialog>
+        `;
+  document.querySelector('main').append(modal);
+};
+
 /**
  * @description 필수 요소에 대해 초기화 로직을 수행합니다.
  */
@@ -93,6 +110,11 @@ const scrollToLastChatNode = () => chatListPanel.scrollTop = chatListPanel.scrol
       });
 
       chatInputbox.value = '';
+
+      setTimeout(() => {
+        if (socket.connected) return;
+        showConnectionErrorModal();
+      }, 5000);
     }
   });
 })();
@@ -126,5 +148,7 @@ window.addEventListener('load', () => {
     chatListPanel.append(createChat(chat));
     scrollToLastChatNode();
   });
+
+  socket.on('connect_error', showConnectionErrorModal);
 
 });
