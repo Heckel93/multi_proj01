@@ -66,11 +66,7 @@ const reDrawLivePanel = (users) => {
   });
 };
 
-const scrollToLastChatNode = () => {
-  const last = chatListPanel.lastChild;
-  const rect = last.getBoundingClientRect();
-  chatListPanel.scrollTop = rect.y;
-};
+const scrollToLastChatNode = () => chatListPanel.scrollTop = chatListPanel.scrollHeight;
 
 /**
  * @description 필수 요소에 대해 초기화 로직을 수행합니다.
@@ -93,7 +89,7 @@ const scrollToLastChatNode = () => {
         user: user.name,
         avatarUrl: user.avatarUrl,
         message: chatInputbox.value,
-        time: dayjs(new Date()).format('MM월 DD일 HH:MM:ss'),
+        time: dayjs().format('MM월 DD일 HH:MM:ss'),
       });
 
       chatInputbox.value = '';
@@ -101,30 +97,34 @@ const scrollToLastChatNode = () => {
   });
 })();
 
-socket.on('userList', ({ userList: list }) => {
-  list.forEach(user => {
-    liverPanel.append(createLiveUser(user));
+window.addEventListener('load', () => {
+  socket.on('userList', ({ userList: list }) => {
+    list.forEach(user => {
+      liverPanel.append(createLiveUser(user));
+    });
   });
-});
 
-socket.on('enter-new-member', ({ clientsCount, userName, userList }) => {
-  reDrawLivePanel(userList);
-  chatListPanel.append(createEnterMessage(userName));
-});
+  socket.on('enter-new-member', ({ clientsCount, userName, userList }) => {
+    reDrawLivePanel(userList);
+    chatListPanel.append(createEnterMessage(userName));
+  });
 
-socket.on('disconnected', ({ target, userList }) => {
-  reDrawLivePanel(userList);
-  chatListPanel.append(createLeaveMessage(target.name));
-});
+  socket.on('disconnected', ({ target, userList }) => {
+    reDrawLivePanel(userList);
+    chatListPanel.append(createLeaveMessage(target.name));
+  });
 
-socket.on('history', (chatList) => {
-  chatList.forEach(chat => {
+  socket.on('history', (chatList) => {
+    console.log({ chatList });
+    chatList.forEach(chat => {
+      chatListPanel.append(createChat(chat));
+    });
+    scrollToLastChatNode();
+  });
+
+  socket.on('chat-broadcast', (chat) => {
     chatListPanel.append(createChat(chat));
+    scrollToLastChatNode();
   });
-  scrollToLastChatNode();
-});
 
-socket.on('chat-broadcast', (chat) => {
-  chatListPanel.append(createChat(chat));
-  scrollToLastChatNode();
 });
