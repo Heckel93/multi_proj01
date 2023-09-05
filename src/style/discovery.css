@@ -1,3 +1,7 @@
 .input{
     margin:auto;
 }
+
+.d-flex{
+    display:flex;
+}
