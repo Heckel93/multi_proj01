@@ -12,3 +12,7 @@
 img{
     display: block;
 }
+
+.discovery-bg {
+    background: linear-gradient(246.08deg, #0AA2C0 34.64%, rgba(10, 162, 192, 0) 149.64%, #0AA2C0 149.64%);
+}

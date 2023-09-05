@@ -97,3 +97,7 @@ footer {
 .chat {
     @apply flex gap-x-2.5;
 }
+
+.banner {
+    @apply h-[550px] flex items-center justify-center relative overflow-hidden text-white;
+}
