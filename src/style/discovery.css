@@ -1,3 +1,14 @@
 .d-flex{
     display:flex;
 }
+
+.box-sizing{
+    width: 831px;
+    height: 160px;
+    margin-left: 230px;
+    padding: 15px;
+}
+
+img{
+    display: block;
+}
