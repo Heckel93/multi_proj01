@@ -2,6 +2,11 @@
 
 브라우저로 제공하는 간단한 채팅 서비스
 
+![main](./public/multicode-main.gif){: width="300" height="600"}
+![main](./public/mtcode-chat.gif){: width="300" height="600"}
+
+***
+
 ### 팀원 소개
 | 이름   | 역할                                                  |
 |------|-----------------------------------------------------|
