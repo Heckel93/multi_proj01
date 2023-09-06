@@ -17,14 +17,14 @@
   </section>
 
   <main class="common_layout">
-    <form class="d-flex pt-20 w-full gap-x-3" role="search">
+    <div class="d-flex pt-20 w-full gap-x-3" role="search">
       <input class="form-control rounded-[4px]" id="search-box" type="search" placeholder="프로젝트를 탐색하세요." aria-label="Search">
       <button class="btn btn-outline-success" id="search-submit-button" type="submit">
         <img src="/Search.svg" alt="검색 아이콘입니다.">
       </button>
-    </form>
+    </div>
 
-    <p class="pt-4 pb-10 text-xl font-bold">개의 결과</p>
+    <p class="pt-4 pb-10 text-xl font-bold" id="search-result">개의 결과</p>
 
     <nav class="post-panel">
       <div class="post">
@@ -42,7 +42,7 @@
     </nav>
   </main>
 
-  <div class="pb-20"></div>
+  <div class="pb-40"></div>
   <footer></footer>
   
   <script type="module" src="../js/main.js"></script>

@@ -22,6 +22,9 @@ const posts = [
 ];
 
 const postPanel = document.querySelector('.post-panel');
+const search = document.getElementById('search-box');
+const searchSubmitButton = document.getElementById('search-submit-button');
+const result = document.getElementById('search-result');
 
 const createRandomNumber = (min = 5, max = 100) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
@@ -33,8 +36,8 @@ const createPost = ({ title, description, url }, input) => {
 
   container.className = 'post';
   container.innerHTML = `
-    <img src="${url}" alt="" class="">
-    <div class="flex flex-col">
+    <img src="${url}" alt="" class="max-h-[200px] drop-shadow-md">
+    <div class="flex flex-col h-full">
       <h4 class="font-bold text-xl pb-1.5">
         ${title.replace('[input]', input)}
       </h4>
@@ -48,8 +51,8 @@ const createPost = ({ title, description, url }, input) => {
   return container;
 };
 
-const randomCreatePost = (input = '') => {
-  const count = createRandomNumber(5, 70);
+const randomCreatePost = (input = '', maxCount = 70) => {
+  const count = createRandomNumber(5, maxCount);
   const randomPosts = [];
   for (let i = 0; i < count; i++) {
     const mockIndex = createRandomNumber(0, posts.length - 1);
@@ -68,5 +71,12 @@ const randomCreatePost = (input = '') => {
 };
 
 window.addEventListener('load', () => {
-  const result = randomCreatePost().length;
+  const postCount = randomCreatePost(search.value, 15).length;
+  result.textContent = `${postCount}개의 결과`;
+});
+
+searchSubmitButton.addEventListener('click', () => {
+  const postCount = randomCreatePost(search.value).length;
+  result.textContent = `${postCount}개의 결과`;
+  search.value = '';
 });
