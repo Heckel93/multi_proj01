@@ -2,8 +2,9 @@
 
 브라우저로 제공하는 간단한 채팅 서비스
 
-![main](./public/multicode-main.gif | 250x450)
-![main](./public/mtcode-chat.gif | 250x450)
+<img src="./public/multicode-main.gif" data-canonical-src="./public/multicode-main.gif" width="300" height="400" style="margin-left: 1em" />
+<img src="./public/mtcode-chat.gif" data-canonical-src="./public/mtcode-chat.gif" width="300" height="400" />
+
 
 ***
 
