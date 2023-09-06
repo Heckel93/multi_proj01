@@ -37,6 +37,7 @@ img{
 
 .post {
     display: flex;
+    width: 100%;
     column-gap: 1em;
 }
 
@@ -47,5 +48,5 @@ img{
 }
 
 .post div {
-    flex: 0.7;
+    flex: 1;
 }
