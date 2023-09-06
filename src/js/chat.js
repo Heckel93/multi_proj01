@@ -138,7 +138,6 @@ window.addEventListener('load', () => {
   });
 
   socket.on('history', (chatList) => {
-    console.log({ chatList });
     chatList.forEach(chat => {
       chatListPanel.append(createChat(chat));
     });
