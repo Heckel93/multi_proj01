@@ -5,25 +5,65 @@
     <title>MULTICODE | 다운로드</title>
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="stylesheet" href="../style/download.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
-  <body>
+  <body class="pretendard">
     <header></header>
-    <section class="banner" style="background-color: #343a40">
-      <div class="topSec_left">
-        <h2>어느 장치에서든<br />MULTICODE 설치하기</h2>
+
+    <section class="banner bg-gray-700 px-0 md:px-[20px] md:px-[100px] lg:px-[200px]">
+      <div class="flex flex-col gap-y-5 flex-[0.5]">
+        <h2 class="text-3xl font-bold">어느 장치에서든 MULTICODE 설치하기</h2>
         <p>즐거운 프로젝트에서 팀원들이 당신 만을 기다리고 있어요.</p>
+        <button class="button_primary max-w-[160px] flex whitespace-nowrap gap-x-1.5">
+          <img src="/download-white.svg" alt="download icon">
+          <span>다운로드</span>
+        </button>
       </div>
-      <div class="topSec_right">
+      <div class="flex-[0.5]">
         <img src="/laptop 1.svg" alt="img" />
       </div>
     </section>
+
     <main class="common_layout">
-      <!-- 여기에 페이지를 작성하세요 -->
+      <article class="article gap-y-36">
+        <div class="flex-[0.5] justify-center flex flex-col items-center w-full gap-y-10">
+          <img src="/download-01.svg" alt="download-01.svg" class="!m-0 h-[300px]">
+          <button class="button_primary max-w-[220px]">Windows 다운로드</button>
+        </div>
+
+        <div class="flex-[0.5] items-center justify-center flex flex-col w-full gap-y-10">
+          <img src="/download-02.svg" alt="download-02.svg" class="!m-0 h-[300px]">
+          <button class="button_gray max-w-[220px]">MacOS 다운로드</button>
+        </div>
+      </article>
+
+      <article>
+        <section class="flex flex-col items-center gap-y-5 mt-[200px] start">
+          <h1 class="font-bold text-[2rem] leading-tight text-gray-800">웹에서도 이용할 수 있어요!</h1>
+          <button class="button_primary go_chat_button">서비스 시작!</button>
+        </section>
+      </article>
+
+      <div class="pb-36"></div>
     </main>
+
     <footer></footer>
 
     <script type="module" src="../js/main.js"></script>
     <script type="module" src="../js/molecules.js"></script>
     <script type="module" src="../js/login.js"></script>
+    <script type="module" src="../js/anime.js"></script>
+
+    <script>
+      const goChatButtons = Array.from(document.getElementsByClassName('go_chat_button'));
+      goChatButtons.forEach(button => {
+        button.onclick = () => {
+          location.href = '/src/doc/chat.html';
+        };
+      });
+    </script>
   </body>
 </html>
