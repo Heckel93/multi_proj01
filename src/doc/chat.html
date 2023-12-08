@@ -1,38 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MULTICODE | 채팅</title>
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="../style/chat.css">
 </head>
 <body>
-   <div class="wrapper">
-   <div class="user-container">
-    <label for="nickname">대화명</label>
-    <input type="text" id="nickname"></div>
-    <div class="display-container">
-        <ul class="chatting-list">
-            <li>
-                <span class="profile">
-                    <span class="user">깔깔</span>
-                    <img src="https://placeimg.com/50/50/ant" alt="any">
-                </span>
-                <!-- <span class="message">그래반가워</span>
-                <span class="time">오후 2:10</span> -->
-            </li>
-        </ul>
-    </div>    
-    <div class="input-container">
-        <span> 
-        <input type="text" class="chatting-input">
-        <button class="send-button">전송</button>
-        </span>
-    </div>
+  <main class="bg-gray-800 h-full flex">
 
+    <nav class="flex-col hidden md:flex">
+      <article class="live_panel">
+        <span class="text-gray-400">접속한 인원</span>
+        <div class="pb-2"></div>
 
-</div>
-    <script src="/socket.io/socket.io.js"></script> 
-     <script src="js/socket.js"></script><!-- chatjs를 불러오기 -->
+        <section id="liver_panel" class="flex flex-col gap-y-3.5">
+        </section>
+      </article>
+
+      <section class="my_profile w-full bg-slate-800 px-5 py-3">
+        <span class="text-gray-400">나의 상태</span>
+        <div class="liver profile_card">
+        </div>
+      </section>
+    </nav>
+    
+    <section class="w-full flex flex-col h-full">
+      <article class="chat_space">
+        <div class="chat_header flex justify-end px-4 py-3">
+          <button class="button_primary !py-1.5 !px-6" id="go_home">채팅 떠나기</button>
+        </div>
+      </article>
+
+      <section class="chat_panel">
+        <div id="chat_list" class="chat_list flex flex-col gap-y-3 px-4 py-2.5">
+        </div>
+        <div class="px-5 py-5">
+          <input type="text" class="chat_box" placeholder="채팅을 입력하여 메시지 보내기">
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="../js/login.js"></script>
+  <script type="module" src="../js/chat.js"></script>
+  <script>
+    const exitButton = document.querySelector('#go_home');
+    exitButton.onclick = () => {
+      location.href = '/';
+    };
+  </script>
+
 </body>
 </html>

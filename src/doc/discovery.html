@@ -4,16 +4,50 @@
   <meta charset="UTF-8">
   <title>MULTICODE | 디스커버리</title>
   <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="../style/discovery.css">
 </head>
-<body>
+<body class="pretendard">
   <header></header>
-  <main class="common_layout">
-    <!-- 여기에 페이지를 작성하세요 -->
-  </main>
-  <footer></footer>
 
+  <section class="banner discovery-bg flex-col">
+    <h1 class="text-[2.3rem] font-bold">
+      MULTICODE에서 다양한 커뮤니티를 찾으세요
+    </h1>
+    <h3 class="text-lg">당신이 찾는 팀원들이 바로 여기에</h3>
+  </section>
+
+  <main class="common_layout">
+    <div class="d-flex pt-20 w-full gap-x-3" role="search">
+      <input class="form-control rounded-[4px]" id="search-box" type="search" placeholder="프로젝트를 탐색하세요." aria-label="Search">
+      <button class="btn btn-outline-success" id="search-submit-button" type="submit">
+        <img src="/Search.svg" alt="검색 아이콘입니다.">
+      </button>
+    </div>
+
+    <p class="pt-4 pb-10 text-xl font-bold" id="search-result">개의 결과</p>
+
+    <nav class="post-panel">
+      <div class="post">
+        <img src="/frame_15.png" alt="" class="">
+        <div class="flex flex-col">
+          <h4 class="font-bold text-xl pb-1.5">
+            React 웹 영화 개발팀
+          </h4>
+          <span class="text-gray-500 font-light max-w-[370px] text-sm md:text-base pb-6">
+            React.js 를 공부하며 영화 순위표 사이트를 제작합니다. 현재 프런트엔드 1 / API 1 구하고 있습니다!
+          </span>
+          <span class="self-end text-gray-700">5 온라인 10멤버</span>
+        </div>
+      </div>
+    </nav>
+  </main>
+
+  <div class="pb-40"></div>
+  <footer></footer>
+  
   <script type="module" src="../js/main.js"></script>
   <script type="module" src="../js/molecules.js"></script>
   <script type="module" src="../js/login.js"></script>
+  <script type="module" src="../js/discovery.js"></script>
 </body>
 </html>

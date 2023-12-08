@@ -17,7 +17,7 @@ module.exports = {
             }
         }
     ],
-    ignorePatterns: ["api/**/*", "vite.config.js"],
+    ignorePatterns: ["api/**/*", "vite.config.js", "tailwind*"],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"

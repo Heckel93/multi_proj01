@@ -1,30 +1,20 @@
 import { io } from 'socket.io-client';
-import { fakerKO } from '@faker-js/faker';
-
 import { getUser } from './login.js';
 
-const chatTest = document.querySelector('#chatTest');
-chatTest.addEventListener('click', () => {
-  const user = getUser();
-  socket.emit('chat', {
-    user: user?.name,
-    message: fakerKO.lorem.lines(3),
-  });
-});
+const outServerEndpoint = 'ws://galaxy4276.asuscomm.com:8000';
+const localhost = 'ws://localhost:8000';
 
-export let socket = null;
+let socket = null;
 
-const initializeSocket = () => {
+export const initializeSocket = () => {
   const user = getUser();
   if (!user) throw Error('로그인이 필요합니다.');
-  const instance = io('ws://localhost:8000', {
+  const instance = io(outServerEndpoint, {
     auth: user,
   });
   socket = instance;
   return instance;
 };
-
-initializeSocket();
 
 const socketTest = () => {
   if (!socket) return;
@@ -47,5 +37,3 @@ const socketTest = () => {
     console.log({ disconnect: data });
   });
 };
-
-socketTest();

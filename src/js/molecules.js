@@ -51,9 +51,9 @@ export const createFooter = () => {
           <span class="text-cyan-500 font-bold">Github</span>
         </div>
         <a href="https://github.com/galaxy4276" target="_blank">최은기 (galaxy4276)</a>
-        <a href="/discover">최찬범 (bbomfomi)</a>
-        <a href="/chat">김건우 (kkwkkw)</a>
-        <a href="/chat">김서원 (sekim2)</a>
+        <a href="https://github.com/bbomfomi">최찬범 (bbomfomi)</a>
+        <a href="https://github.com/Heckel93">김건우 (Heckel93)</a>
+        <a href="https://github.com/sekim2">김서원 (sekim2)</a>
       </nav>
     </section>
 

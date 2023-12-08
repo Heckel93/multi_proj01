@@ -14,6 +14,7 @@ const httpServer = http.createServer(app);
 app.use(cors({
   origin: '*',
   methods: '*',
+  credentials: true,
 }));
 app.use(express.urlencoded());
 app.use(express.json());
@@ -38,8 +39,7 @@ ioServer.on('connection', socket => {
     return chatDatabase;
   })());
 
-  socket.emit('enter-new-member', () => {
-    const headers = socket.request.headers;
+  socket.broadcast.emit('enter-new-member', (() => {
     const auth = socket.handshake.auth as UserAuth;
 
     const { clientsCount } = ioServer.engine;
@@ -48,11 +48,12 @@ ioServer.on('connection', socket => {
       userName: auth.name,
       userList: userDatabase,
     };
-  });
+  })());
 
   socket.on('chat', (data: Chat) => {
-    chatDatabase.push({ user: data.user, message: data.message, avatarUrl: data.avatarUrl });
+    chatDatabase.push(data);
     console.log({ chatDatabase });
+    socket.emit('chat-broadcast', data);
     socket.broadcast.emit('chat-broadcast', data);
   });
 
@@ -69,4 +70,4 @@ ioServer.on('connection', socket => {
 
 });
 
-httpServer.listen(8000);
+httpServer.listen(8000, '0.0.0.0');

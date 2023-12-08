@@ -14,12 +14,13 @@
     <div id="app">
       <header></header>
 
-      <section class="banner bg-cyan-400 h-[550px] flex items-center justify-center relative overflow-hidden">
+      <section class="banner bg-cyan-400">
         <img
           src="/talking_peoples.svg"
           alt="talking_people.svg"
           class="absolute left-0 bottom-0 z-0 w-[300px] md:w-[500px]"
         >
+
         <img
           src="/smile_chat.svg"
           alt="smile_chat.svg"
@@ -39,7 +40,7 @@
               <img src="/download.svg" alt="download icon">
               <span>다운로드</span>
             </button>
-            <button type="button" class="button_gray">채팅 열기</button>
+            <button type="button" class="button_gray go_chat_button">채팅 열기</button>
           </section>
         </div>
       </section>
@@ -88,45 +89,51 @@
         </article>
 
         <section class="article justify-center pretendard mt-20">
-          <div class="flex flex-col justify-center gap-y-5">
+          <div class="flex flex-col justify-center gap-y-16">
             <h1 class="font-bold text-[2rem] leading-tight text-gray-800">오픈 1주만에 타 서비스 대비 압도적인 사용자 수!</h1>
-            <table class="table-auto">
-              <thead class="bg-cyan-500 text-white">
-              <tr>
-                <th class="w-[150px] rounded-tl-2xl py-2">서비스</th>
-                <th class="w-[200px] bg-cyan-400">사용자 수</th>
-                <th class="w-[150px] rounded-tr-2xl">서비스 날짜</th>
-              </tr>
-              </thead>
-              <tbody class="text-center text-slate-700">
-              <tr>
-                <td class="py-1.5">멀티코드</td>
-                <td>9,876,543</td>
-                <td>2023. 9. 3.</td>
-              </tr>
-              <tr class="bg-slate-100">
-                <td class="py-1.5">쿼드라코드</td>
-                <td>2,876,543</td>
-                <td>1970. 6. 27</td>
-              </tr>
-              <tr>
-                <td class="py-1.5">쿼터플코드</td>
-                <td>1,123,543</td>
-                <td>1968. 6. 27</td>
-              </tr>
-              <tr class="bg-slate-100">
-                <td class="py-1.5">싱글코드</td>
-                <td>6,123,543</td>
-                <td>기원전 300년</td>
-              </tr>
-              </tbody>
-            </table>
+            <div class="flex justify-center w-full">
+              <img src="/joyful.svg" alt="joyful.svg" class="!m-0 w-[50%]">
+            </div>
           </div>
+        </section>
+
+        <section class="article justify-center !py-1">
+          <table class="table-auto">
+            <thead class="bg-cyan-500 text-white">
+            <tr>
+              <th class="w-[150px] rounded-tl-2xl py-2">서비스</th>
+              <th class="w-[200px] bg-cyan-400">사용자 수</th>
+              <th class="w-[150px] rounded-tr-2xl">서비스 날짜</th>
+            </tr>
+            </thead>
+            <tbody class="text-center text-slate-700">
+            <tr>
+              <td class="py-1.5">멀티코드</td>
+              <td>9,876,543</td>
+              <td>2023. 9. 3.</td>
+            </tr>
+            <tr class="bg-slate-100">
+              <td class="py-1.5">쿼드라코드</td>
+              <td>2,876,543</td>
+              <td>1970. 6. 27</td>
+            </tr>
+            <tr>
+              <td class="py-1.5">퀀터플코드</td>
+              <td>1,123,543</td>
+              <td>1968. 6. 27</td>
+            </tr>
+            <tr class="bg-slate-100">
+              <td class="py-1.5">싱글코드</td>
+              <td>6,123,543</td>
+              <td>기원전 300년</td>
+            </tr>
+            </tbody>
+          </table>
         </section>
 
         <section class="flex flex-col items-center gap-y-5 mt-[200px] start">
           <h1 class="font-bold text-[2rem] leading-tight text-gray-800">이제 시작해볼까요?</h1>
-          <button class="button_primary">서비스 시작!</button>
+          <button class="button_primary go_chat_button">서비스 시작!</button>
         </section>
       </main>
 
@@ -140,6 +147,13 @@
     <script type="module" src="src/js/molecules.js"></script>
     <script type="module" src="src/js/anime.js"></script>
     <script type="module" src="src/js/login.js"></script>
-    <script type="module" src="src/js/socket.js"></script>
+    <script>
+      const goChatButtons = Array.from(document.getElementsByClassName('go_chat_button'));
+      goChatButtons.forEach(button => {
+        button.onclick = () => {
+          location.href = '/src/doc/chat.html';
+        };
+      });
+    </script>
   </body>
 </html>
